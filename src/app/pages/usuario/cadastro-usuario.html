@@ -1,0 +1,52 @@
+<div>
+        <mat-card fxLayoutAlign="center">
+            <mat-card-content>
+                <form [formGroup]="form">
+                    <div fxLayout="column">
+                        <div>
+                            <mat-form-field style="width: 100%;">
+                                <input name="cadastro-usuario" matInput placeholder="Nome"
+                                [(ngModel)]="usuario.nome" [formControl]="form.controls['nome']"/>
+                            </mat-form-field>
+
+                            <mat-form-field style="width: 100%;">
+                                <input senha="cadastro-usuario" matInput placeholder="Senha"
+                                [(ngModel)]="usuario.senha" [formControl]="form.controls['senha']"/>
+                            </mat-form-field>
+
+                            <mat-form-field style="width: 100%;">
+                                <input email="cadastro-usuario" matInput placeholder="Email"
+                                [(ngModel)]="usuario.email" [formControl]="form.controls['email']"/>
+                            </mat-form-field>
+
+                            <mat-form-field style="width: 100%;">
+                                <input telefone="cadastro-usuario" matInput placeholder="Telefone"
+                                [(ngModel)]="usuario.telefone" [formControl]="form.controls['telefone']"/>
+                            </mat-form-field>
+                        </div>
+                        <div>
+                            <button mat-raised-button (click)="salvar()">
+                                Salvar
+                            </button>
+
+                            <button mat-raised-button (click)="alterar()">
+                                Alterar
+                            </button>
+
+                            <button mat-raised-button (click)="excluir()">
+                                Excluir
+                            </button>
+
+                            <button mat-raised-button (click)="pesquisar()">
+                                Pesquisar
+                            </button>
+
+                            <button mat-raised-button (click)="sair()">
+                                Sair
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </mat-card-content>
+        </mat-card>
+</div>

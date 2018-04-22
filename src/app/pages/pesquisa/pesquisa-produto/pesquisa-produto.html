@@ -1,0 +1,66 @@
+<div class="Lista">
+
+    <mat-table #table [dataSource]="myDataArray">
+
+        <ng-container matColumnDef="position">
+            <mat-header-cell *matHeaderCellDef> Posicao </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="codigo">
+            <mat-header-cell *matHeaderCellDef> Código </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.codigo}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="nome">
+            <mat-header-cell *matHeaderCellDef> Nome </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.nome}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="descricao">
+            <mat-header-cell *matHeaderCellDef> Descrição </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.descricao}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="unidade">
+            <mat-header-cell *matHeaderCellDef> Unidade </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.unidade}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="embalagem">
+            <mat-header-cell *matHeaderCellDef> Embalagem </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.embalagem}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="valor">
+            <mat-header-cell *matHeaderCellDef> Valor </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.valor}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="datacadastro">
+            <mat-header-cell *matHeaderCellDef> Data do Cadastro </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.datacadastro}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="observacoes">
+            <mat-header-cell *matHeaderCellDef> Observações </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.observacoes}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="fornecedor">
+            <mat-header-cell *matHeaderCellDef> Fornecedor </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.fornecedor}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="marca">
+            <mat-header-cell *matHeaderCellDef> Marca </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.marca}} </mat-cell>
+        </ng-container>
+
+        
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+    </mat-table>
+
+</div>

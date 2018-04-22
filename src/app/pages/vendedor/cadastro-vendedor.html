@@ -1,0 +1,84 @@
+<div>
+    <mat-card fxLayoutAlign="center">
+        <mat-card-content>
+            <form [formGroup]="form">
+                <div fxLayout="column">
+                    <div>
+                        <mat-form-field style="width: 100%;">
+                            <input name="cadastro-vendedor" matInput placeholder="Nome"
+                            [(ngModel)]="vendedor.nome" [formControl]="form.controls['nome']"/>
+                        </mat-form-field>
+
+                        <mat-form-field style="width: 100%;">
+                            <input name="cadastro-vendedor" matInput placeholder="CPF"
+                            [(ngModel)]="vendedor.cpf" [formControl]="form.controls['cpf']"/>
+                        </mat-form-field>
+
+                        <mat-form-field style="width: 100%;">
+                            <input name="cadastro-vendedor" matInput placeholder="RG"
+                            [(ngModel)]="vendedor.rg" [formControl]="form.controls['rg']"/>
+                        </mat-form-field>
+
+                        <mat-form-field style="width: 100%;">
+                            <input name="cadastro-vendedor" matInput placeholder="Telefone"
+                            [(ngModel)]="vendedor.telefone" [formControl]="form.controls['telefone']"/>
+                        </mat-form-field>
+
+                        <mat-form-field style="width: 100%;">
+                            <input name="cadastro-vendedor" matInput placeholder="Email"
+                            [(ngModel)]="vendedor.email" [formControl]="form.controls['email']"/>
+                        </mat-form-field>
+
+                        <mat-form-field style="width: 100%;">
+                            <input name="cadastro-vendedor" matInput placeholder="Endereco"
+                            [(ngModel)]="vendedor.endereco" [formControl]="form.controls['endereco']"/>
+                        </mat-form-field>
+
+                        <mat-form-field style="width: 100%;">
+                            <input name="cadastro-vendedor" matInput placeholder="Bairro"
+                            [(ngModel)]="vendedor.bairro" [formControl]="form.controls['bairro']"/>
+                        </mat-form-field>
+
+                        <mat-form-field style="width: 100%;">
+                            <input name="cadastro-vendedor" matInput placeholder="CEP"
+                            [(ngModel)]="vendedor.cep" [formControl]="form.controls['cep']"/>
+                        </mat-form-field>
+
+                        <mat-form-field style="width: 100%;">
+                            <input name="cadastro-vendedor" matInput placeholder="Data de Admissão"
+                            [(ngModel)]="vendedor.dataadmissao" [formControl]="form.controls['dataadmissao']"/>
+                        </mat-form-field>
+
+                        <mat-form-field style="width: 100%;">
+                            <input name="cadastro-vendedor" matInput placeholder="Cidade"
+                            [(ngModel)]="vendedor.cidade" [formControl]="form.controls['cidade']"/>
+                        </mat-form-field>
+                        
+                        
+                    </div>
+                    <div>
+                        <button mat-raised-button (click)="salvar()">
+                            Salvar
+                        </button>
+
+                        <button mat-raised-button (click)="alterar()">
+                            Alterar
+                        </button>
+
+                        <button mat-raised-button (click)="excluir()">
+                            Excluir
+                        </button>
+
+                        <button mat-raised-button (click)="pesquisar()">
+                            Pesquisar
+                        </button>
+
+                        <button mat-raised-button (click)="sair()">
+                            Sair
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

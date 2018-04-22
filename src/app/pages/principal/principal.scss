@@ -1,0 +1,76 @@
+.app-root {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-family: Ubuntu Mono;
+    animation-name: unfadeIn;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out 1s;
+    animation-duration: 1s;
+    background: #636262;
+    .header {
+        position: relative;
+        width: 100%;
+        height: 80%;
+        // background: #636262;
+        max-height: 1350px;
+        z-index: 1;
+        .toolbar {
+            position: fixed;
+            right: 0;
+            top: 0;
+            left: 0;
+            height: 70px;
+            // box-shadow: 0 2px 5px 0 rgba(0,0,0,0.26);
+            // background: #4d4c4c;
+            padding-left: 1%;
+            // padding-right: 25px;
+            z-index: 10;
+            // transition: box-shadow 1s ease;
+            display: flex;
+            justify-content: flex-end;
+             
+            .actions {
+                width: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                .action {
+                    color: white;
+                    width: 20vw;
+                    height: 100%;
+                    max-width: 90px;
+                    cursor: pointer;
+                    text-transform: uppercase;
+                    transition: all .3s ease-out;
+                    justify-content: center;
+                    font-size: 1em;
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                }
+                .action:hover {
+                    background: #4d4c4c;
+                }
+            }
+        } 
+    }
+    .content {
+        width: 100%;
+        color: rgba(0, 0, 0, 0.4);
+        padding-top: 5%;
+        height: 100%;
+        box-shadow: 0 -2px 2px 0 rgba(0, 0, 0, .2), 0 -4px 5px -2px rgba(0, 0, 0, .2), 0 -7px 10px 1px rgba(0, 0, 0, .2), 0 -2px 16px 1px rgba(0, 0, 0, .1);
+        background: white;
+        z-index: 5;
+         
+    }
+     
+}
+
+.sidebar {
+    width: 200px;
+    height: 100%;
+}

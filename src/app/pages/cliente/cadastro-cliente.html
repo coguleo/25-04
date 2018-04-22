@@ -1,0 +1,74 @@
+<div>
+    <mat-card fxLayoutAlign="center">
+        <mat-card-content>
+            <form [formGroup]="form">
+                <div fxLayout="column">
+                    <div>
+                        <mat-form-field style="width: 100%;">
+                            <input name="cadastro-cliente" matInput placeholder="Nome"
+                            [(ngModel)]="cliente.nome" [formControl]="form.controls['nome']"/>
+                        </mat-form-field>
+
+                        <mat-form-field style="width: 100%;">
+                            <input name="cadastro-cliente" matInput placeholder="CPF"
+                            [(ngModel)]="cliente.cpf" [formControl]="form.controls['cpf']"/>
+                        </mat-form-field>
+
+                        <mat-form-field style="width: 100%;">
+                            <input name="cadastro-cliente" matInput placeholder="RG"
+                            [(ngModel)]="cliente.rg" [formControl]="form.controls['rg']"/>
+                        </mat-form-field>
+
+                        <mat-form-field style="width: 100%;">
+                            <input name="cadastro-cliente" matInput placeholder="Telefone"
+                            [(ngModel)]="cliente.telefone" [formControl]="form.controls['telefone']"/>
+                        </mat-form-field>
+
+                        <mat-form-field style="width: 100%;">
+                            <input name="cadastro-cliente" matInput placeholder="Cidade"
+                            [(ngModel)]="cliente.cidade" [formControl]="form.controls['cidade']"/>
+                        </mat-form-field>
+
+                        <mat-form-field style="width: 100%;">
+                            <input name="cadastro-cliente" matInput placeholder="Endereco"
+                            [(ngModel)]="cliente.endereco" [formControl]="form.controls['endereco']"/>
+                        </mat-form-field>
+
+                        <mat-form-field style="width: 100%;">
+                            <input name="cadastro-cliente" matInput placeholder="Bairro"
+                            [(ngModel)]="cliente.bairro" [formControl]="form.controls['bairro']"/>
+                        </mat-form-field>
+
+                        <mat-form-field style="width: 100%;">
+                            <input name="cadastro-cliente" matInput placeholder="CEP"
+                            [(ngModel)]="cliente.cep" [formControl]="form.controls['cep']"/>
+                        </mat-form-field>
+                        
+                        
+                    </div>
+                    <div>
+                        <button mat-raised-button (click)="salvar()">
+                            Salvar
+                        </button>
+
+                        <button mat-raised-button (click)="alterar()">
+                            Alterar
+                        </button>
+
+                        <button mat-raised-button (click)="excluir()">
+                            Excluir
+                        </button>
+
+                        <button mat-raised-button (click)="pesquisar()">
+                            Pesquisar
+                        </button>
+
+                        <button mat-raised-button (click)="sair()">
+                            Sair
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

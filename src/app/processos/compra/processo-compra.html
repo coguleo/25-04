@@ -1,0 +1,88 @@
+<div>
+    <mat-card fxLayoutAlign="center">
+        <mat-card-content>
+            <form [formGroup]="form">
+                <div fxLayout="column">
+                    <div fxLayout="row" class="inline">
+                        <mat-form-field fxFlex="20" style="width: 100%;">
+                            <input name="codigo" matInput placeholder="Codigo" [(ngModel)]="compra.codigo" [formControl]="form.controls['codigo']" />
+                        </mat-form-field>
+                        <span fxFlex="2%"></span>
+
+                        <div class="button-row">
+                            <button mat-raised-button (click)="abrirPesquisaFornecedor()">Fornecedor</button>
+                        </div>
+
+                        <span fxFlex="2%"></span>
+                        <mat-form-field style="width: 100%;" fxFlex="20">
+                            <input name="fornecedor" matInput placeholder="Fornecedor" [(ngModel)]="fornecedor.nome" [formControl]="form.controls['fornecedor']"
+                            />
+                        </mat-form-field>
+
+                        <span fxFlex="2%"></span>
+                        <mat-form-field style="width: 100%;" fxFlex="20">
+                            <input name="cnpj" matInput placeholder="CNPJ" [(ngModel)]="fornecedor.cnpj" [formControl]="form.controls['cnpj']" />
+                        </mat-form-field>
+                    </div>
+
+                    <span fxFlex="10%"></span>
+                    <div fxLayout="row" class="inline">
+                        <mat-form-field fxFlex="20" style="width: 100%;">
+                            <input name="datacompra" matInput placeholder="Data Compra" [(ngModel)]="compra.datacompra" [formControl]="form.controls['datacompra']"
+                            />
+                        </mat-form-field>
+                        <span fxFlex="2%"></span>
+                        <mat-form-field style="width: 100%;" fxFlex="20">
+                            <input name="dataentrega" matInput placeholder="Data Entrega" [(ngModel)]="compra.dataentrega" [formControl]="form.controls['dataentrega']"
+                            />
+                        </mat-form-field>
+                    </div>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+
+    <div class="Lista">
+
+        <mat-table #table [dataSource]="dataSource">
+
+            <ng-container matColumnDef="compra">
+                <mat-header-cell *matHeaderCellDef> Compra </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.compra}} </mat-cell>
+            </ng-container>
+
+
+            <ng-container matColumnDef="produto">
+                <mat-header-cell *matHeaderCellDef> Produto </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.produto}} </mat-cell>
+            </ng-container>
+
+
+            <ng-container matColumnDef="quantidade">
+                <mat-header-cell *matHeaderCellDef> Quantidade </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.quantidade}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="vlrunitario">
+                <mat-header-cell *matHeaderCellDef> Valor Unitario </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.vlrunitario}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="vlrtotal">
+                <mat-header-cell *matHeaderCellDef> Valor Total </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.vlrtotal}} </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+        </mat-table>
+
+    </div>
+
+    <div>
+        <button mat-raised-button (click)="salvar()">
+            Salvar
+        </button>
+    </div>
+</div>

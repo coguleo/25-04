@@ -1,0 +1,73 @@
+<div>
+    <mat-card fxLayoutAlign="center">
+        <mat-card-content>
+            <form [formGroup]="form">
+                <div fxLayout="column">
+                    <div>
+                        <mat-form-field style="width: 100%;">
+                            <input name="cadastro-produto" matInput placeholder="Nome"
+                            [(ngModel)]="produto.nome" [formControl]="form.controls['nome']"/>
+                        </mat-form-field>
+
+                        <mat-form-field style="width: 100%;">
+                            <input senha="cadastro-produto" matInput placeholder="Descricao"
+                            [(ngModel)]="produto.descricao" [formControl]="form.controls['descricao']"/>
+                        </mat-form-field>
+
+                        <mat-form-field style="width: 100%;">
+                            <input email="cadastro-produto" matInput placeholder="Unidade"
+                            [(ngModel)]="produto.unidade" [formControl]="form.controls['unidade']"/>
+                        </mat-form-field>
+
+                        <mat-form-field style="width: 100%;">
+                            <input telefone="cadastro-produto" matInput placeholder="Embalagem"
+                            [(ngModel)]="produto.embalagem" [formControl]="form.controls['embalagem']"/>
+                        </mat-form-field>
+
+                        <mat-form-field style="width: 100%;">
+                            <input telefone="cadastro-produto" matInput placeholder="Valor"
+                            [(ngModel)]="produto.valor" [formControl]="form.controls['valor']"/>
+                        </mat-form-field>
+
+                        <mat-form-field style="width: 100%;">
+                            <input telefone="cadastro-produto" matInput placeholder="Observacoes"
+                            [(ngModel)]="produto.observacoes" [formControl]="form.controls['observacoes']"/>
+                        </mat-form-field>
+
+                        <mat-form-field style="width: 100%;">
+                            <input telefone="cadastro-produto" matInput placeholder="Fornecedor"
+                            [(ngModel)]="produto.fornecedor" [formControl]="form.controls['fornecedor']"/>
+                        </mat-form-field>
+
+                        <mat-form-field style="width: 100%;">
+                            <input telefone="cadastro-marca" matInput placeholder="Marca"
+                            [(ngModel)]="produto.marca" [formControl]="form.controls['marca']"/>
+                        </mat-form-field>
+
+                    </div>
+                    <div>
+                        <button mat-raised-button (click)="salvar()">
+                                Salvar
+                            </button>
+
+                            <button mat-raised-button (click)="alterar()">
+                                Alterar
+                            </button>
+
+                            <button mat-raised-button (click)="excluir()">
+                                Excluir
+                            </button>
+
+                            <button mat-raised-button (click)="pesquisar()">
+                                Pesquisar
+                            </button>
+
+                            <button mat-raised-button (click)="sair()">
+                                Sair
+                            </button>
+                    </div>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

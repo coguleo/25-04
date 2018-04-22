@@ -1,0 +1,31 @@
+<div>
+    <mat-card fxLayoutAlign="center">
+        <mat-card-content>
+            <form [formGroup]="form">
+                <div fxLayout="column">
+                    <div>
+                        <mat-form-field style="width: 100%;">
+                            <input name="login" matInput placeholder="Usuário"
+                            [(ngModel)]="login" [formControl]="form.controls['login']">
+                       
+                            
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <mat-form-field style="width: 100%;">
+                            <input name="senha" matInput placeholder="Senha"
+                            [(ngModel)]="senha" [formControl]="form.controls['senha']"/>
+                            
+                    </mat-form-field>
+                    </div>
+                    <div>
+                        <button mat-raised-button (click)="logar()">
+                            Acessar
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+
+</div>

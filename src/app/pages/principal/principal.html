@@ -1,0 +1,40 @@
+<div class="app">
+    <mat-toolbar class="main-header" color="red">
+        <button mat-icon-button>
+            <mat-icon>menu</mat-icon>
+        </button>
+        <div fxFlex>
+            <span>Estoque Plus</span>
+        </div>
+        <div>
+            <button mat-icon-button>
+                <mat-icon>close</mat-icon>
+            </button>
+        </div>
+    </mat-toolbar>
+    Menu do Sistema
+</div>
+<mat-sidenav-container class="app-inner" class="sidebar">
+    <mat-list>
+
+        <mat-list-item>
+            <a [routerLink]="['/','pesquisa-marca']">Pesquisar Marca</a>
+        </mat-list-item>
+
+        <mat-list-item>
+            <a [routerLink]="['/','login']">Logar</a>
+        </mat-list-item>
+        <mat-list-item>
+            <a [routerLink]="['/','fornecedor-cadastro']">Cadastrar Fornecedor</a>
+        </mat-list-item>
+        <mat-list-item>
+            <a [routerLink]="['/','processo-venda']">Venda</a>
+        </mat-list-item>
+        <mat-list-item>
+            <a [routerLink]="['/','processo-compra']">Compra</a>
+        </mat-list-item>
+        
+
+    </mat-list>
+    <router-outlet></router-outlet>
+</mat-sidenav-container>

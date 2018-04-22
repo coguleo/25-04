@@ -1,0 +1,35 @@
+<div class="Lista">
+        
+            <mat-table #table [dataSource]="myDataArray">
+        
+                <ng-container matColumnDef="position">
+                    <mat-header-cell *matHeaderCellDef> Posicao </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+                </ng-container>
+        
+                <ng-container matColumnDef="nome">
+                    <mat-header-cell *matHeaderCellDef> Nome </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.nome}} </mat-cell>
+                </ng-container>
+        
+                <ng-container matColumnDef="email">
+                    <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="celular">
+                        <mat-header-cell *matHeaderCellDef> Celular </mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.celular}} </mat-cell>
+                    </ng-container>
+
+                    <ng-container matColumnDef="senha">
+                            <mat-header-cell *matHeaderCellDef> Senha </mat-header-cell>
+                            <mat-cell *matCellDef="let element"> {{element.senha}} </mat-cell>
+                        </ng-container>
+
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        
+            </mat-table>
+        
+        </div>

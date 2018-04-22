@@ -1,0 +1,43 @@
+<div>
+    <mat-card fxLayoutAlign="center">
+        <mat-card-content>
+            <form [formGroup]="form">
+                <div fxLayout="column">
+                    <div>
+                        <mat-form-field style="width: 100%;">
+                            <input name="cadastro-cidade" matInput placeholder="Nome"
+                            [(ngModel)]="cidade.nome" [formControl]="form.controls['nome']"/>
+                        </mat-form-field>
+
+                        <mat-form-field style="width: 100%;">
+                            <input name="cadastro-cidade" matInput placeholder="UF"
+                            [(ngModel)]="cidade.uf" [formControl]="form.controls['uf']"/>
+                        </mat-form-field>
+                        
+                    </div>
+                    <div>
+                        <button mat-raised-button (click)="salvar()">
+                            Salvar
+                        </button>
+
+                        <button mat-raised-button (click)="alterar()">
+                            Alterar
+                        </button>
+
+                        <button mat-raised-button (click)="excluir()">
+                            Excluir
+                        </button>
+
+                        <button mat-raised-button (click)="pesquisar()">
+                            Pesquisar
+                        </button>
+
+                        <button mat-raised-button (click)="sair()">
+                            Sair
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

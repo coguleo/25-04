@@ -1,0 +1,50 @@
+<mat-toolbar class="main-header" color="blue">
+    <button mat-icon-button (click)="drawer.toggle()">
+        <mat-icon>Menu</mat-icon>
+    </button>
+    <div fxFlex>
+        <span>Estoque Plus</span>
+    </div>
+    <div>
+        <button mat-icon-button>
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+</mat-toolbar>
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+        <mat-list class="esquerda">
+            <mat-list-item>
+                <a [routerLink]="['/','usuario-cadastro']">Cadastrar Usuário</a>
+            </mat-list-item>
+            <mat-list-item>
+                <a [routerLink]="['/','produto-cadastro']">Cadastrar Produto</a>
+            </mat-list-item>
+            <mat-list-item>
+                <a [routerLink]="['/','marca-cadastro']">Cadastrar Marca</a>
+            </mat-list-item>
+            <mat-list-item>
+                <a [routerLink]="['/','cidade-cadastro']">Cadastrar Cidade</a>
+            </mat-list-item>
+            <mat-list-item>
+                <a [routerLink]="['/','cliente-cadastro']">Cadastrar Cliente</a>
+            </mat-list-item>
+            <mat-list-item>
+                <a [routerLink]="['/','fornecedor-cadastro']">Cadastrar Fornecedor</a>
+            </mat-list-item>
+            <mat-list-item>
+                <a [routerLink]="['/','vendedor-cadastro']">Cadastrar Vendedor</a>
+            </mat-list-item>
+            <mat-list-item>
+                <a [routerLink]="['/','pesquisa-marca']">Pesquisar Marca</a>
+            </mat-list-item>
+
+            <mat-list-item>
+                <a [routerLink]="['/','login']">Logar</a>
+            </mat-list-item>
+        </mat-list>    
+    </mat-drawer>
+    <!-- <div fxFlex="100%" class="centro"> -->
+    <router-outlet></router-outlet>
+    <!-- </div> -->
+</mat-drawer-container>

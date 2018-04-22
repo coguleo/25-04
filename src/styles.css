@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import './app/componentes/template/template.scss';
+@import './app/pages/principal/principal.scss';
+
+app-root {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    left: 0;
+    bottom: 0px;
+    margin: auto;
+    background: black;
+    z-index: 0;
+}
