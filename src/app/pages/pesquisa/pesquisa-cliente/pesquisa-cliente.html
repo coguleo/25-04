@@ -1,61 +1,72 @@
 <div class="Lista">
-
-    <mat-table #table [dataSource]="myDataArray">
-
-        <ng-container matColumnDef="position">
-            <mat-header-cell *matHeaderCellDef> Posicao </mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
-        </ng-container>
-
-        <ng-container matColumnDef="nome">
-            <mat-header-cell *matHeaderCellDef> Nome </mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{element.nome}} </mat-cell>
-        </ng-container>
-
-        <ng-container matColumnDef="cpf">
-            <mat-header-cell *matHeaderCellDef> CPF </mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{element.cpf}} </mat-cell>
-        </ng-container>
-
-        <ng-container matColumnDef="rg">
-            <mat-header-cell *matHeaderCellDef> RG </mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{element.rg}} </mat-cell>
-        </ng-container>
-
-        <ng-container matColumnDef="telefone">
-            <mat-header-cell *matHeaderCellDef> Telefone </mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{element.telefone}} </mat-cell>
-        </ng-container>
-
-        <ng-container matColumnDef="cidade">
-            <mat-header-cell *matHeaderCellDef> Cidade </mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{element.cidade}} </mat-cell>
-        </ng-container>
-
-        <ng-container matColumnDef="endereco">
-            <mat-header-cell *matHeaderCellDef> Endereço </mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{element.endereco}} </mat-cell>
-        </ng-container>
-
-        <ng-container matColumnDef="bairro">
+    
+        <div fxLayout="row" class="inline">
+            <mat-form-field style="width: 100%;" fxFlex>
+                <input name="digite" matInput placeholder="Digite um Nome" [(ngModel)]="nome" />
+            </mat-form-field>
+    
+            <div class="button-row">
+                <button mat-raised-button (click)="pesquisar()">Buscar</button>
+            </div>
+        </div>
+    
+        <mat-table #table [dataSource]="dataSource">
+            <ng-container matColumnDef="id">
+                <mat-header-cell *matHeaderCellDef> Código </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+            </ng-container>
+    
+            <ng-container matColumnDef="nome">
+                <mat-header-cell *matHeaderCellDef> Nome </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.nome}} </mat-cell>
+            </ng-container>
+    
+            <ng-container matColumnDef="cpf">
+                <mat-header-cell *matHeaderCellDef> CPF </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.cpf}} </mat-cell>
+            </ng-container>
+    
+            <ng-container matColumnDef="rg">
+                <mat-header-cell *matHeaderCellDef> RG </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.rg}} </mat-cell>
+            </ng-container>
+    
+            <ng-container matColumnDef="telefone">
+                <mat-header-cell *matHeaderCellDef> Telefone </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.telefone}} </mat-cell>
+            </ng-container>
+    
+            <ng-container matColumnDef="endereco">
+                <mat-header-cell *matHeaderCellDef> Endereço </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.endereco}} </mat-cell>
+            </ng-container>
+    
+            <ng-container matColumnDef="bairro">
                 <mat-header-cell *matHeaderCellDef> Bairro </mat-header-cell>
                 <mat-cell *matCellDef="let element"> {{element.bairro}} </mat-cell>
             </ng-container>
-
+    
             <ng-container matColumnDef="cep">
-                    <mat-header-cell *matHeaderCellDef> CEP </mat-header-cell>
-                    <mat-cell *matCellDef="let element"> {{element.cep}} </mat-cell>
+                <mat-header-cell *matHeaderCellDef> CEP </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.cep}} </mat-cell>
             </ng-container>
 
             <ng-container matColumnDef="datanascimento">
-                    <mat-header-cell *matHeaderCellDef> Data de Nascimento </mat-header-cell>
-                    <mat-cell *matCellDef="let element"> {{element.datanascimento}} </mat-cell>
+                <mat-header-cell *matHeaderCellDef> Data de Nascimento </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.datanascimento}} </mat-cell>
             </ng-container>
-                
 
-        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-
-    </mat-table>
-
-</div>
+            <ng-container matColumnDef="cidade">
+                <mat-header-cell *matHeaderCellDef> Cidade </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.cidade.nome}} </mat-cell>
+            </ng-container>
+    
+    
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    
+        </mat-table>
+    
+    
+    
+    </div>

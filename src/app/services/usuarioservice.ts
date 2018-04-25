@@ -31,6 +31,12 @@ export class UsuarioService extends AbstractService<Usuario> {
         return this.http.post(this.urlWeb + '/logar',body, requestOptions ); 
     }
 
+    public buscarPorNome(nome): Observable<Array<Usuario>> {
+        return this.http.post(this.urlWeb+"/buscarpornome", nome).map(res => {
+          return res.json();
+        });
+      }
+
     
 
 }

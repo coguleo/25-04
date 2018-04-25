@@ -1,34 +1,43 @@
 import { Fornecedor } from './../../../model/fornecedor';
-import { Cliente } from './../../../model/cliente';
-import {Component} from '@angular/core';
+import { FornecedorService } from './../../../services/fornecedor-service';
+import { Router, ActivatedRoute } from '@angular/router';
+import { MarcaService } from './../../../services/marcaservice';
+import { Marca } from './../../../model/marca';
+import { Component, Inject } from '@angular/core';
 import {MatTableDataSource} from '@angular/material';
 @Component({
   selector: 'pesquisa-fornecedor',
   styleUrls: ['pesquisa-fornecedor.scss'],
   templateUrl: 'pesquisa-fornecedor.html',
+  providers: [FornecedorService]
 })
 
 export class PesquisaFornecedor {
-    displayedColumns = ['position', 'codigo', 'nome', 'cnpj,', 'endereco', 'bairro', 'cidade', 'telefone', 'fax', 'cep', 'email', 'datacadastro'];
-    dataSource =  new MatTableDataSource(fornecedores) ;
+
+    
+
+    public nome: string;
+
+
+    public fornecedor: Fornecedor[] = [ 
+    ]; 
+    displayedColumns = ['id', 'nome', 'cnpj', 'endereco', 'bairro', 'telefone', 'fax', 'cep', 'email', 'datacadastro', 'cidade' ];
+    dataSource =  new MatTableDataSource(this.fornecedor) ;
+
+    constructor (public route:ActivatedRoute, private fornecedorService: FornecedorService ){
+      this.route.params.subscribe(data => {
+        if (data['nome'] ){
+            this.nome = data['nome'] ;
+        }
+    })
+    }
+
+
+    public pesquisar() {
+      this.fornecedorService.buscarPorNome(this.nome).subscribe((lista)=> {
+          this.fornecedor = lista;
+          this.dataSource =  new MatTableDataSource(this.fornecedor) ;
+      });
+  }
   }
 
-  export interface Element {
-    position: number;
-    codigo: number;
-    nome: string;
-    cnpj: string;
-    endereco: string;
-    bairro: string;
-    cidade: string;
-    telefone: string;
-    fax: string;
-    cep: string;
-    email: string;
-    datacadastro: Date;
-
-  }
-
-  const fornecedores: Fornecedor[] = [
-
-  ];

@@ -1,32 +1,47 @@
 import { Produto } from './../../../model/produto';
-import {Component} from '@angular/core';
+import { ProdutoService } from './../../../services/produtoservice';
+import { Cliente } from './../../../model/cliente';
+import { ClienteService } from './../../../services/cliente-service';
+import { Fornecedor } from './../../../model/fornecedor';
+import { FornecedorService } from './../../../services/fornecedor-service';
+import { Router, ActivatedRoute } from '@angular/router';
+import { MarcaService } from './../../../services/marcaservice';
+import { Marca } from './../../../model/marca';
+import { Component, Inject } from '@angular/core';
 import {MatTableDataSource} from '@angular/material';
 @Component({
   selector: 'pesquisa-produto',
   styleUrls: ['pesquisa-produto.scss'],
   templateUrl: 'pesquisa-produto.html',
+  providers: [ProdutoService]
 })
 
 export class PesquisaProduto {
-    displayedColumns = ['position', 'codigo', 'nome', 'descricao,', 'unidade', 'embalagem', 'valor', 'datacadastro', 'observacoes', 'fornecedor', 'marca'];
-    dataSource =  new MatTableDataSource(produtos) ;
+
+    
+
+    public nome: string;
+
+
+    public produto: Produto[] = [ 
+    ]; 
+    displayedColumns = ['id', 'nome', 'unidade', 'embalagem', 'valor', 'datacadastro', 'marca', 'fornecedor', 'observacoes'];
+    dataSource =  new MatTableDataSource(this.produto) ;
+
+    constructor (public route:ActivatedRoute, private produtoService: ProdutoService ){
+      this.route.params.subscribe(data => {
+        if (data['nome'] ){
+            this.nome = data['nome'] ;
+        }
+    })
+    }
+
+
+    public pesquisar() {
+      this.produtoService.buscarPorNome(this.nome).subscribe((lista)=> {
+          this.produto = lista;
+          this.dataSource =  new MatTableDataSource(this.produto) ;
+      });
+  }
   }
 
-  export interface Element {
-    position: number;
-    codigo: number;
-    nome: string;
-    descricao: string;
-    unidade: number;
-    embalagem: string;
-    valor: number;
-    datacadastro: Date;
-    observacoes: string;
-    fornecedor: string;
-    marca: string;
-
-  }
-
-  const produtos: Produto[] = [
-
-  ];

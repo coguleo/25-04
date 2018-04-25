@@ -22,7 +22,7 @@ export class UsuarioCadastro {
     public nome: string;
     public senha: string;
     public email: string;
-    public telefone: string;
+    public celular: string;
     public cidade: Cidade;
 
     //UsuarioService ->Objeto para realizar 
@@ -37,7 +37,7 @@ export class UsuarioCadastro {
             nome: [null, Validators.required],
             senha: [null, Validators.required],
             email: [null, Validators.required],
-            telefone: [null, Validators.required]
+            celular: [null, Validators.required]
         });
     }
 

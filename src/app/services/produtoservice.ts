@@ -19,6 +19,12 @@ export class ProdutoService extends AbstractService<Produto> {
         return "produto";
     }
 
+    public buscarPorNome(nome): Observable<Array<Produto>> {
+        return this.http.post(this.urlWeb+"/buscarpornome", nome).map(res => {
+          return res.json();
+        });
+      }
+
     
 
 }

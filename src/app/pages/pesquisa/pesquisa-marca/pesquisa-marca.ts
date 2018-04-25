@@ -19,7 +19,7 @@ export class PesquisaMarca {
 
     public marca: Marca[] = [ 
     ]; 
-    displayedColumns = ['position', 'codigo', 'nome'];
+    displayedColumns = ['id', 'nome'];
     dataSource =  new MatTableDataSource(this.marca) ;
 
     constructor (public route:ActivatedRoute, private marcaService: MarcaService ){
